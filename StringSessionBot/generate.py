@@ -114,7 +114,7 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups [RAM SUPPORT GROUP](https://t.me/ramsupport)".format("TELETHON" if telethon else "PYROGRAM", string_session)
+    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups [RAM SUPPORT GROUP](https://t.me/ramsupportt)".format("TELETHON" if telethon else "PYROGRAM", string_session)
     await client.send_message("me", text)
     await client.disconnect()
     await phone_code_msg.reply("Udah berhasil ni ngambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy [✨RAM-UBOT](https://t.me/ram_ubot)".format("telethon" if telethon else "pyrogram"))
