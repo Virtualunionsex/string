@@ -12,7 +12,7 @@ Telegram bot to generate pyrogram and telethon string session.
 
 ### Deploy to Heroku
 
-[![Deploy](https://telegram.dog/XTZ_HerokuBot?start=cmFtYWRoYW5pODkyL3N0cmluZ3JhbSBtYXN0ZXI)](https://heroku.com/deploy?template=https://github.com/Skyzu/StringSky)
+[![Deploy](https://telegram.dog/XTZ_HerokuBot?start=cmFtYWRoYW5pODkyL3N0cmluZ3JhbSBtYXN0ZXI)](https://heroku.com/deploy?template=https://github.com/ramadhani892/ramstring)
 
 1. Tap on above button and fill `API_ID`, `API_HASH`, `BOT_TOKEN` (and `MUST_JOIN`).
 2. Then tap "Deploy App" below it. Wait till deploying is complete (will take atmost 2 minutes).
