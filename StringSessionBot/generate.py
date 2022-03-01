@@ -57,7 +57,7 @@ async def generate_session(bot, msg, telethon=False):
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
-    await msg.reply("Sending OTP...")
+    await msg.reply("Mengirim Kode OTP...")
     if telethon:
         client = TelegramClient(StringSession(), api_id, api_hash)
     else:
@@ -69,13 +69,13 @@ async def generate_session(bot, msg, telethon=False):
         else:
             code = await client.send_code(phone_number)
     except (ApiIdInvalid, ApiIdInvalidError):
-        await msg.reply('`API_ID` and `API_HASH` combination is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply('`API_ID` dan `API_HASH` nya Ga valid Kontol. Cobalah Kalo Ga sekolah, Ngaji, Biar goblok masuk surga, Ulang lagi ngentod!!!', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     except (PhoneNumberInvalid, PhoneNumberInvalidError):
-        await msg.reply('`PHONE_NUMBER` is invalid. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await msg.reply('`PHONE_NUMBER` Nya Ga valid memek. Coba ulang, Jangan pake nomor togel ya anjing.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
     try:
-        phone_code_msg = await bot.ask(user_id, "Please check for an OTP in official telegram account. If you got it, send OTP here after reading the below format. \nIf OTP is `12345`, **please send it as** `1 2 3 4 5`.", filters=filters.text, timeout=600)
+        phone_code_msg = await bot.ask(user_id, "Cek Beranda telegram, Ada pesan dari telegram. Lalu, Kirim Kode OTP nya kesini dengan formart. \nContoh Kode `12345`, **Kirim dengan spasi seperti** `1 2 3 4 5`.", filters=filters.text, timeout=600)
         if await cancelled(api_id_msg):
             return
     except TimeoutError:
@@ -114,10 +114,10 @@ async def generate_session(bot, msg, telethon=False):
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups @skyzusupport".format("TELETHON" if telethon else "PYROGRAM", string_session)
+    text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups [RAM SUPPORT GROUP](https://t.me/ramsupport)".format("TELETHON" if telethon else "PYROGRAM", string_session)
     await client.send_message("me", text)
     await client.disconnect()
-    await phone_code_msg.reply("Udah berhasil ni ngambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @RAM_UBOT".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("Udah berhasil ni ngambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy [✨RAM-UBOT](https://t.me/ram_ubot)".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
