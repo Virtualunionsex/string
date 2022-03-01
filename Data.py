@@ -53,7 +53,7 @@ By @RAM_UBOT
     ABOUT = """
 **About This Bot** 
 
-Sebuah telegram bot untuk mengambil pyrogram dan telethon string session by @SkyStringBot
+Sebuah telegram bot untuk mengambil pyrogram dan telethon string session by [✨RAM-UBOT✨](https://t.me/ram_ubot
 
 DONASI : [Traktir Kopi Tipis²](https://t.me/userbotch/9)
 
