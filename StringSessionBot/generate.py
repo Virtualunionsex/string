@@ -30,10 +30,10 @@ ERROR_MESSAGE = "Oops! An exception occurred! \n\n**Error** : {} " \
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('generate'))
 async def main(_, msg):
     await msg.reply(
-        "Silahkan Tekan String Mana Yang Ingin Kamu Ambil",
+        "Pilih String yang mau lu ambil ngentodddd",
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton("Pyrogram", callback_data="pyrogram"),
-            InlineKeyboardButton("Telethon", callback_data="telethon")
+            InlineKeyboardButton("Pyrontod", callback_data="pyrogram"),
+            InlineKeyboardButton("Telentol", callback_data="telethon")
         ]])
     )
 
@@ -41,19 +41,19 @@ async def main(_, msg):
 async def generate_session(bot, msg, telethon=False):
     await msg.reply("Memulai {} Session Generation...".format("Telethon" if telethon else "Pyrogram"))
     user_id = msg.chat.id
-    api_id_msg = await bot.ask(user_id, 'Tolong Kirim  `API_ID`', filters=filters.text)
+    api_id_msg = await bot.ask(user_id, 'Buruan Kirim  `API_ID`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     try:
         api_id = int(api_id_msg.text)
     except ValueError:
-        await api_id_msg.reply('Tidak Benar API_ID (which must be an integer). Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
+        await api_id_msg.reply('Ada yang ga beres API_ID Lu Kontol (which must be an integer). Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
-    api_hash_msg = await bot.ask(user_id, 'Tolong Kirim `API_HASH`', filters=filters.text)
+    api_hash_msg = await bot.ask(user_id, 'Buruan Kirim `API_HASH`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     api_hash = api_hash_msg.text
-    phone_number_msg = await bot.ask(user_id, 'Sekarang Kirkm `PHONE_NUMBER` Dengan Kode Nomor. \nExample : `+628xxxxxxx`', filters=filters.text)
+    phone_number_msg = await bot.ask(user_id, 'Sekarang Lu kirim `PHONE_NUMBER` Dengan Kode Nomor yg bener ngentod. \nExample : `+628xxxxxxx`', filters=filters.text)
     if await cancelled(api_id_msg):
         return
     phone_number = phone_number_msg.text
@@ -117,7 +117,7 @@ async def generate_session(bot, msg, telethon=False):
     text = "**{} STRING SESSION** \n\n`{}` \n\nSupport Groups @skyzusupport".format("TELETHON" if telethon else "PYROGRAM", string_session)
     await client.send_message("me", text)
     await client.disconnect()
-    await phone_code_msg.reply("Berhasil Megambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @ProjectSkyzu".format("telethon" if telethon else "pyrogram"))
+    await phone_code_msg.reply("Udah berhasil ni ngambil {} string session. \n\nSilahkan cek di Pesan Tersimpan/Saved Message! \n\nBy @RAM_UBOT".format("telethon" if telethon else "pyrogram"))
 
 
 async def cancelled(msg):
